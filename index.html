@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Page</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+         background: linear-gradient(to right, #f800ae, #d104fa); 
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        /* Imagen */
+        .imagen img {
+            width: 350px; /* Ajusta el tamaño de la imagen */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sección de texto */
+        .texto {
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .texto h2 {
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .texto p {
+            font-size: 18px;
+            color: #000000;
+        }
+
+        /* Botón animado */
+        .boton {
+            background-color: #f70090;
+            color: rgb(255, 255, 255);
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .boton:hover {
+            transform: scale(1.1);
+            background-color: #d307fc;
+        }
+
+        /* Pantalla negra con animación */
+        .pantalla-negra {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+        }
+
+        .mostrar {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animación de texto */
+        .mensaje {
+            animation: aparecer 1.5s ease infinite alternate;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0.2; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Imagen -->
+        <div class="imagen">
+            <img src="foto enid.jpg" alt="Imagen de ejemplo">
+        </div>
+
+        <!-- Texto y botón -->
+        <div class="texto">
+            <h2>Enid</h2>
+            <p>Te amo muchisimo mi amor gracias por este año juntos</p>
+            <button class="boton" onclick="animarYRedirigir()">Ver Más</button>
+        </div>
+    </div>
+
+    <!-- Pantalla negra animada -->
+    <div class="pantalla-negra" id="pantalla">
+        <p class="mensaje">Redirigiendo...</p>
+    </div>
+
+    <script>
+        function animarYRedirigir() {
+            let pantalla = document.getElementById("pantalla");
+            pantalla.classList.add("mostrar");
+
+            setTimeout(() => {
+                window.location.href = "https://itzthestexz.github.io/aniversario/"; // Cambia el enlace aquí
+            }, 3000); // 3 segundos antes de redirigir
+        }
+    </script>
+
+</body>
+</html>
